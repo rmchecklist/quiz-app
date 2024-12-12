@@ -1,0 +1,17 @@
+<div class="quiz">
+  <mat-card>
+    <mat-card-title>Quiz: {{ quizName }}</mat-card-title>
+    <mat-card-content>
+      <p>{{prefix}} {{ currentQuestion }}</p>
+      @for(option of currentOptions; track $index){
+        <div>
+          <button mat-button (click)="selectOption(option)">{{ option }}</button>
+        </div>
+
+      }
+    </mat-card-content>
+    <mat-card-actions>
+      <span>Time Remaining: {{ timer | async }}</span>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,11 @@
+{
+  "quizName": "India States and Capitals",
+  "prefix": "What is the Capital of ",
+  "questions": [
+    { "state": "Karnataka", "capital": "Bengaluru" },
+    { "state": "Maharashtra", "capital": "Mumbai" },
+    { "state": "Tamil Nadu", "capital": "Chennai" },
+    { "state": "West Bengal", "capital": "Kolkata" },
+    { "state": "Rajasthan", "capital": "Jaipur" }
+  ]
+}

@@ -1,0 +1,12 @@
+<div class="quiz-setup">
+  <h2>Quiz Setup</h2>
+  <mat-form-field>
+    <mat-label>Number of Questions</mat-label>
+    <input matInput [(ngModel)]="numberOfQuestions" type="number" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Total Time (Minutes)</mat-label>
+    <input matInput [(ngModel)]="totalTime" type="number" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="startQuiz()">Start Quiz</button>
+</div>

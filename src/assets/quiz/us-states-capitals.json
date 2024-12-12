@@ -1,0 +1,11 @@
+{
+  "quizName": "US States and Capitals",
+  "prefix": "What is the Capital of ",
+  "questions": [
+    { "state": "Alabama", "capital": "Montgomery" },
+    { "state": "Alaska", "capital": "Juneau" },
+    { "state": "Arizona", "capital": "Phoenix" },
+    { "state": "California", "capital": "Sacramento" },
+    { "state": "Texas", "capital": "Austin" }
+  ]
+}
