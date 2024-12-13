@@ -1,6 +1,29 @@
-.quiz-setup {
+.setup-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f0f0;
   padding: 20px;
+}
+.setup-card {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+mat-card-header {
+  text-align: center;
+}
+mat-card-content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
+  padding: 16px;
+}
+mat-form-field {
+  width: 100%;
+}
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
 }

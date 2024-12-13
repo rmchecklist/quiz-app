@@ -1,6 +1,55 @@
-.quiz {
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f5f5f5;
   padding: 20px;
+}
+.quiz-card {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+}
+.quiz-header {
+  text-align: center;
+  background-color: #6200ea;
+  color: #ffffff;
+  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  justify-content: center;
+}
+.quiz-content {
+  padding: 24px;
+}
+.question {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.options {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 12px;
+}
+.option-button {
+  font-size: 1rem;
+  padding: 12px;
+  border-radius: 8px;
+  text-transform: none;
+}
+.quiz-actions {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+}
+.timer {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ff5722;
+}
+
+mat-card-subtitle {
+  color: white;
 }
