@@ -7,12 +7,6 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist
-          token: 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
       - name: Checkout Repository
         uses: actions/checkout@v3
       - name: Setup Node.js
