@@ -52,7 +52,7 @@ export class QuizComponent {
   ) {
     if (quizId) {
       this.httpClient
-        .get(`quiz-app/assets/quiz/${quizId}-states-capitals.json`)
+        .get(`/quiz-app/assets/quiz/${quizId}-states-capitals.json`)
         .subscribe((data: any) => {
           this.allQuestions = data.questions;
           this.prefix = data.prefix;
