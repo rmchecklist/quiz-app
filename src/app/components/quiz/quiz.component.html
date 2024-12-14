@@ -2,22 +2,31 @@
   <mat-card class="quiz-card">
     <mat-card-header class="quiz-header">
       <mat-card-title>Quiz: {{ quizName }}</mat-card-title>
-      <mat-card-subtitle>Question {{ currentQuestionIndex + 1 }} of {{ shuffledQuestions.length }}</mat-card-subtitle>
+      <mat-card-subtitle
+        >Question {{ currentQuestionIndex + 1 }} of
+        {{ shuffledQuestions.length }}</mat-card-subtitle
+      >
     </mat-card-header>
     <mat-card-content class="quiz-content">
-      <p class="question">{{prefix}} {{ currentQuestion }}</p>
+      <p class="question">{{ question }}</p>
       <div class="options">
-        @for(option of currentOptions; track $index){
-          <button mat-raised-button (click)="selectOption(option)" class="option-button">
-            {{ option }}
-          </button>
+        @for(option of options; track $index){
+        <button
+          mat-raised-button
+          (click)="selectOption(option)"
+          class="option-button"
+        >
+          {{ option }}
+        </button>
 
         }
       </div>
     </mat-card-content>
     <mat-card-actions class="quiz-actions">
-      <span class="timer">Time Remaining: {{ timerService.getRemainingTime() | formatTime}}</span>
+      <span class="timer"
+        >Time Remaining:
+        {{ timerService.getRemainingTime() | formatTime }}</span
+      >
     </mat-card-actions>
   </mat-card>
 </div>
-

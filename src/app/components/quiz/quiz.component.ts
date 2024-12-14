@@ -66,22 +66,52 @@ export class QuizComponent {
         });
     }
   }
-
   displayQuestion() {
-    const currentQ = this.shuffledQuestions[this.currentQuestionIndex];
-    this.currentQuestion = currentQ.state;
-    const correctOption = currentQ.capital;
-    const incorrectOptions = this.allQuestions
-      .filter((question) => question.state !== this.currentQuestion.state)
-      .map((ques) => ques.capital)
-      .slice(0, 3);
-    this.currentOptions = this.shuffleArray([
-      ...incorrectOptions,
-      correctOption,
-    ]);
+    const currentQuestion = this.shuffledQuestions[this.currentQuestionIndex];
+    this.question = `${this.prefix} ${currentQuestion.state}?`;
+
+    // Generate incorrect options from other questions
+    const incorrectOptionsPool = this.shuffledQuestions
+      .filter((q) => q.state !== currentQuestion.state)
+      .map((q) => q.capital);
+
+    // Randomly select 3 incorrect options
+    const incorrectOptions = this.getRandomSamples(incorrectOptionsPool, 3);
+
+    // Combine correct and incorrect options
+    const allOptions = [currentQuestion.capital, ...incorrectOptions];
+
+    // Shuffle all options
+    this.options = this.shuffleArray(allOptions);
   }
+
+  /**
+   * Randomly selects a given number of samples from an array.
+   */
+  getRandomSamples(array: any[], sampleSize: number): any[] {
+    const result = [];
+    const usedIndices = new Set();
+
+    while (result.length < sampleSize && usedIndices.size < array.length) {
+      const randomIndex = Math.floor(Math.random() * array.length);
+      if (!usedIndices.has(randomIndex)) {
+        result.push(array[randomIndex]);
+        usedIndices.add(randomIndex);
+      }
+    }
+
+    return result;
+  }
+
+  /**
+   * Shuffles an array using Fisher-Yates algorithm.
+   */
   shuffleArray(array: any[]): any[] {
-    return array.sort(() => Math.random() - 0.5);
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
   }
 
   selectOption(option: string) {

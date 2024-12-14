@@ -4,10 +4,11 @@ import { Question } from '../quiz/quiz.model';
 import { QuizService } from '../../services/quiz.service';
 import { MatTableModule } from '@angular/material/table';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-result',
-  imports: [RouterLink, MatTableModule, MatCardModule],
+  imports: [RouterLink, MatTableModule, MatCardModule, MatButtonModule],
   templateUrl: './result.component.html',
   styleUrl: './result.component.scss',
 })
