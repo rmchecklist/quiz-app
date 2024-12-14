@@ -2,23 +2,23 @@ name: Build and Deploy Angular App
 on:
   push:
     branches:
-      - main # Trigger on push to main branch
+      - master # Trigger on push to main branch
 jobs:
   build:
     runs-on: self-hosted
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v3
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
-    - name: Install Dependencies
-      run: npm install
-    - name: Build Angular Application
-      run: npm run build -- --output-path=dist --base-href="/quiz-app/"
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@v4
-      with:
-        branch: gh-pages
-        folder: dist
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "16"
+      - name: Install Dependencies
+        run: npm install
+      - name: Build Angular Application
+        run: npm run build -- --output-path=dist --base-href="/quiz-app/"
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: dist
